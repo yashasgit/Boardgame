@@ -46,8 +46,8 @@ pipeline {
                             kubectl config use-context my-context
 
                             # Update and deploy
-                            sed -i "s|image: yashasdocker/boardgame-app:latest|image: $DOCKER_IMAGE|" k8s/deployment-service.yaml
-                            kubectl apply -f k8s/deployment-service.yaml
+                            sed -i "s|image: yashasdocker/boardgame-app:latest|image: $DOCKER_IMAGE|" deployment-service.yaml
+                            kubectl apply -f deployment-service.yaml
                             
                             # Wait for deployment to complete
                             kubectl rollout status deployment/boardgame-app --timeout=120s
