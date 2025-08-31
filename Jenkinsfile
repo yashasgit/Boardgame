@@ -26,7 +26,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('', REGISTRY_CREDENTIALS) {
+                    // Try this alternative syntax if needed
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-cred') {
                         dockerImage.push()
                     }
                 }
