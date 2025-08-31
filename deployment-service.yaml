@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: boardgame-app
-        image: <your-dockerhub-username>/boardgame-app:latest # This will be dynamically replaced
+        image: yashasdocker/boardgame-app:latest # This will be dynamically replaced
         ports:
         - containerPort: 5000
         env:
