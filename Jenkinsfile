@@ -42,8 +42,8 @@ pipeline {
                         kubectl config set-credentials jenkins --token=${K8S_TOKEN}
                         kubectl config set-context my-context --cluster=my-cluster --user=jenkins
                         kubectl config use-context my-context
-                        sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' k8s/deployment-service.yaml
-                        kubectl apply -f k8s/deployment-service.yaml
+                        sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' deployment-service.yaml
+                        kubectl apply -f deployment-service.yaml
                     """
                 }
             }
