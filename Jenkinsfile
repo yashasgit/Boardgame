@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "yashasgit/boardgame-app:${env.BUILD_ID}"
+        DOCKER_IMAGE = "yashasdocker/boardgame-app:${env.BUILD_ID}"
         REGISTRY_CREDENTIALS = credentials('dockerhub-cred')
         K8S_SERVER = 'https://172.31.34.168:6443'
         K8S_TOKEN = credentials('k8s-token')
